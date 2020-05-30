@@ -1,0 +1,5 @@
+- Add ability to delete notes, need an endpoint that can delete notes.
+- Add ability to parse tag data as JSON from sqlite.
+
+- Add sidebar for different routes and organization
+- Add ability to drag and drop tags and categories in section
