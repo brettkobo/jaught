@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     printTest() {
-      console.log('wow this event emit acually worked asdasd');
+      console.log('wow this event emit acually worked asdasdasd');
     },
     clearForm() {
       this.form.title = '';
