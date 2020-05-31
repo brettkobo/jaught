@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Notes from './components/Notes.vue';
+import EmbeddedEditor from './components/EmbeddedEditor.vue';
 
 Vue.use(Router);
 
@@ -12,6 +13,11 @@ export default new Router({
       path: '/notes',
       name: 'Notes',
       component: Notes,
+    },
+    {
+      path: '/embed-editor',
+      name: 'EmbeddedEditor',
+      component: EmbeddedEditor,
     },
   ],
 });

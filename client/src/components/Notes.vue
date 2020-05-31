@@ -4,14 +4,17 @@
       <div class="col-3"></div>
        <div class="col-6">
         <b-form @submit="addNote" @reset="clearForm" v-if="show">
+          <!-- @contentUp="setContent" :con="con"> -->
           <b-form-group  id="input-group-1"  label="Title:" label-for="input-1" label-cols-lg="2">
             <b-form-input id="input-1" v-model="form.title" required placeholder="title"/>
           </b-form-group>
 
+          <EmbeddedEditor @contentUp="form.body = $event" ></EmbeddedEditor>
+<!--
           <b-form-group id="input-group-2" label="Note:" label-for="input-2" label-cols-lg="2">
             <b-form-input id="input-2" v-model="form.body" required placeholder="body"/>
           </b-form-group>
-
+-->
           <b-form-group id="input-group-3" label="Tags" label-for="input-3" label-cols-lg="2">
             <b-form-tags input-id="tags-basic"
                          v-model="tags"
@@ -39,10 +42,12 @@
 <script>
 import axios from 'axios';
 import NotesRender from './NotesRender.vue';
+import EmbeddedEditor from './EmbeddedEditor.vue';
 
 export default {
   components: {
     NotesRender,
+    EmbeddedEditor,
   },
   name: 'Notes',
   data() {
@@ -64,8 +69,7 @@ export default {
     clearForm() {
       this.form.title = '';
       this.form.body = '';
-      this.tags = []
-
+      this.tags = [];
     },
     getAllNotes() {
       const path = 'http://127.0.0.1:5000/note/all';

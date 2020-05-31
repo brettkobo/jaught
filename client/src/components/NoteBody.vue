@@ -29,7 +29,6 @@
 
 <script>
 import axios from 'axios';
-import NoteBody from './NotesBody.vue';
 
 export default {
   name: 'NotesRender',
