@@ -1,7 +1,11 @@
-- Add the ability to...
+Incremental Features
+- Add styling for the note form.
+- Refector the card componet that will act as a visual and a form.
+- Send event down to the editor to clear on form subission
+- Add modal that pop-ups when wanting to create new note.
 
-- Add ability to delete notes, need an endpoint that can delete notes.
-- Add ability to parse tag data as JSON from sqlite.
 
-- Add sidebar for different routes and organization
-- Add ability to drag and drop tags and categories in section
+Core Features:
+- Add authenication and concepts of users.
+- Add ability to drag and drop notes for categorization
+- Build weather endpoint that just show basic concepts.
