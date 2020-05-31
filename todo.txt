@@ -1,3 +1,5 @@
+- Add the ability to...
+
 - Add ability to delete notes, need an endpoint that can delete notes.
 - Add ability to parse tag data as JSON from sqlite.
 
