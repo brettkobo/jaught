@@ -52,7 +52,6 @@ export default {
       editable: false,
       content: '',
     });
-    console.log(`this is the content:${this.body}`);
     this.editor.setContent(this.body);
   },
 };

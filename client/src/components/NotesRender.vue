@@ -1,11 +1,13 @@
 <template>
   <div class="row'">
     <div class="card-columns">
-        <div class="card border-secondary" v-for="(detail,index) in notesData" :key="index">
-          <div class="card-header d-flex justify-content-between">
-            <span>
+        <div class="card shadow"
+             v-for="(detail,index) in notesData"
+             :key="index">
+          <div class="card-header d-flex justify-content-between opposite font-weight-bold"
+               v-bind:style="{ 'background-color': detail.color }">
+
               {{ detail.title }}
-            </span>
 
             <button class="btn btn-outline-secondary btn-sm"
                     @click="deleteNote"
@@ -16,7 +18,7 @@
 
             <NoteBody :body="detail.body"></NoteBody>
 
-          <div class="card-footer">
+          <div class="card-footer" v-bind:style="{ 'background-color': detail.color }">
             <span v-for="(tags,index) in detail.tags"
             :key="index" class="badge badge-info mr-2">
             {{ tags.tag }}
@@ -58,3 +60,23 @@ export default {
   },
 };
 </script>
+
+<style>
+.opposite {
+/*sets the background for the base class*/
+    background: rgb(var(--red), var(--green), var(--blue));
+
+  --r: calc(var(--red) * 0.2126);
+  --g: calc(var(--green) * 0.7152);
+  --b: calc(var(--blue) * 0.0722);
+  --sum: calc(var(--r) + var(--g) + var(--b));
+
+  --perceived-lightness: calc(var(--sum) / 255);
+
+
+  color: hsl(0, 0%, calc((var(--perceived-lightness) - var(--threshold)) * -10000000%));
+
+
+ --border-alpha: calc((var(--perceived-lightness) - var(--border-threshold)) * 100);
+}
+</style>

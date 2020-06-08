@@ -1,10 +1,10 @@
 <template>
   <div class="editor">
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
-      <div class="menubar">
+      <div class="menubar d-flex justify-content-center pt-2 pb-2">
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.bold() }"
           @click="commands.bold">
           <font-awesome-icon icon="bold"/>
@@ -36,7 +36,7 @@
         </button>
 -->
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.code() }"
           @click="commands.code"
         >
@@ -52,7 +52,7 @@
         </button>
 -->
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.heading({ level: 1 }) }"
           @click="commands.heading({ level: 1 })"
         >
@@ -60,7 +60,7 @@
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.heading({ level: 2 }) }"
           @click="commands.heading({ level: 2 })"
         >
@@ -68,7 +68,7 @@
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.heading({ level: 3 }) }"
           @click="commands.heading({ level: 3 })"
         >
@@ -76,7 +76,7 @@
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.bullet_list() }"
           @click="commands.bullet_list"
         >
@@ -84,7 +84,7 @@
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           :class="{ 'is-active': isActive.ordered_list() }"
           @click="commands.ordered_list"
         >
@@ -108,21 +108,21 @@
         </button>
 -->
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           @click="commands.horizontal_rule"
         >
           <font-awesome-icon icon="grip-lines" />
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           @click="commands.undo"
         >
          <font-awesome-icon icon="undo" />
         </button>
 
         <button
-          class="menubar__button"
+          class="menubar__button notes-form"
           @click="commands.redo"
         >
           <font-awesome-icon icon="redo" />
@@ -131,11 +131,8 @@
       </div>
     </editor-menu-bar>
 
-    <editor-content class="editor__content" :editor="editor" />
+    <editor-content class="editor__content pl-2" :editor="editor" />
 
-    <div>
-      {{ rawContent }}
-    </div>
   </div>
 </template>
 
@@ -191,7 +188,7 @@ export default {
           new History(),
         ],
         content: `
-        Your note goes here
+        Content...
         `,
         onUpdate: ({ getHTML }) => {
           this.rawContent = getHTML();
@@ -213,3 +210,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.notes-form {
+  border-radius: 5px;
+  border-color: light;
+}
+</style>

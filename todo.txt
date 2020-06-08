@@ -3,9 +3,12 @@ Incremental Features
 - Refector the card componet that will act as a visual and a form.
 - Send event down to the editor to clear on form subission
 - Add modal that pop-ups when wanting to create new note.
+- Serach notes by tags, body, emojies, auto generated, tags, categories
+
 
 
 Core Features:
 - Add authenication and concepts of users.
 - Add ability to drag and drop notes for categorization
 - Build weather endpoint that just show basic concepts.
+- Add ability to search notes by anything.

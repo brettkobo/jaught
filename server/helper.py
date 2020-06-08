@@ -26,7 +26,7 @@ def add_to_list(item):
         return None
 
 
-def add_to_notes(title, body, tags):
+def add_to_notes(title, body, tags, color):
     try:
         conn = sqlite3.connect(DB_PATH)
 
@@ -38,14 +38,15 @@ def add_to_notes(title, body, tags):
         c = conn.cursor()
 
         c.execute(
-            'insert into notes(note_id, title, body, tags, collection_id, creation_date, modified_date) values(?,?,?,?,?,?,?)',
-            (note_id, title, body, json.dumps(tags), collection_id, creation_date, modified_date)
+            'insert into notes(note_id, title, body, tags, color, collection_id, creation_date, modified_date) values(?,?,?,?,?,?,?,?)',
+            (note_id, title, body, json.dumps(tags), color, collection_id, creation_date, modified_date)
         )
         conn.commit()
         return {"note_id": note_id,
                 "title": title,
                 "body": body,
                 "tags": tags,
+                "color": color,
                 "collection_id": collection_id,
                 "creation_date": creation_date,
                 "modified_date": modified_date,
@@ -65,7 +66,8 @@ def get_all_notes():
         note_id, 
         title, 
         body, 
-        tags, 
+        tags,
+        color, 
         collection_id, 
         creation_date,
         modified_date

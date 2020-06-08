@@ -9,6 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import router from './router';
+import store from './store';
 
 library.add(faBold, faItalic, faStrikethrough, faUnderline, faCode, faParagraph,
   faListUl, faListOl, faQuoteLeft, faGripLines, faUndo, faRedo);
@@ -20,5 +21,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount('#app');

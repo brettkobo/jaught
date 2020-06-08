@@ -20,6 +20,7 @@
     "tiptap-extensions": "^1.29.1",
     "vue": "^2.6.11",
     "vue-awesome": "^4.0.2",
+    "vue-color": "^2.7.1",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
   },
